@@ -1,0 +1,198 @@
+@media (max-width: 1440px) {
+    .container {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .gifts-card-item__top h3, .conditions-card-item__top h3 {
+        font-size: 24px;
+    }
+
+    .gifts-cards {
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .gifts-cards__item p, .conditions-cards__item p, .conditions-cards__item li {
+        font-size: 18px;
+    }
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .nav ul {
+        font-size: 18px;
+        gap: 20px;
+    }
+
+    .gifts-cards,
+    .conditions-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .first-screen h1 {
+        font-size: 60px;
+        max-width: 600px;
+    }
+
+    .first-screen p {
+        font-size: 18px;
+    }
+
+    .gifts h2, .conditions h2, .faq h2, .contacts h2 {
+        font-size: 48px;
+    }
+
+    .gifts-card-item__top h3, .conditions-card-item__top h3 {
+        font-size: 24px;
+        max-width: 100%;
+    }
+
+    .gifts-cards__item p, .conditions-cards__item p {
+        max-width: 650px;
+    }
+
+    .christmas-lama {
+        position: absolute;
+        bottom: 235%;
+        right: 5%;
+        width: 18%;
+        max-width: 130px;
+    }
+
+    .ded-moroz {
+        width: 100px;
+        top: -20%;
+    }
+
+    .decor-gifts, .decor-gifts_2  {
+        width: 100px;
+    }
+
+    footer {
+        padding-bottom: 70%;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 50px;
+        margin: 0 auto;
+    }
+
+    .nav-desktop {
+        display: none;
+    }
+
+    .toggles_row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .toggle-mobile {
+        display: block;
+    }
+
+    .first-screen h1 {
+        font-size: 48px;
+        max-width: 500px;
+    }
+
+    .first-screen p {
+        max-width: 350px;
+    }
+
+    .btn-gifts, .btn-more {
+        font-size: 18px;
+    }
+
+
+    .chance, .conditions-gift {
+        font-size: 20px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .gifts-cards__item p, .conditions-cards__item p {
+        max-width: 450px;
+    }
+
+    .christmas-lama {
+        bottom: 245%;
+    }
+
+    .gifts-card-item__top, .conditions-card-item__top {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+
+
+
+    footer {
+        padding-bottom: 100%;
+    }
+}
+
+@media (max-width: 430px) {
+    .container {
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    .logo img {
+        width: 70%;
+    }
+    .toggle, .toggle-mobile {
+        padding: 15px 20px;
+    }
+
+    .first-screen {
+        background-position: 75%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        padding: 32px 0;
+        gap: 15px;
+    }
+
+    .first-screen h1 {
+        font-size: 36px;
+        max-width: 250px;
+        margin-top: 350px;
+    }
+
+    .gifts h2, .conditions h2, .faq h2, .contacts h2 {
+        font-size: 24px;
+    }
+
+    .gifts-card-item__top h3, .conditions-card-item__top h3 {
+        font-size: 20px;
+        max-width: 250px;
+    }
+
+    .btn-gifts, .btn-more {
+        padding: 6px 12px;
+    }
+
+    .decor-gifts_2 {
+        display: none;
+    }
+
+    .decor-gifts {
+        bottom: 150px;
+    }
+
+    footer {
+        padding-bottom: 200%;
+    }
+}

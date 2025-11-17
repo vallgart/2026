@@ -71,15 +71,16 @@ body {
 }
 
 .header-row {
+    max-width: 1660px;
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1660px;
-    margin: 0 auto;
-    padding: 10px 0;
+    padding: 10px 30px; /* желательно */
 }
 
-.nav a {
+.nav-desktop a {
     position: relative;
     text-decoration: none;
     color: #fff;
@@ -87,7 +88,7 @@ body {
     transform: 0.3s ease;
 }
 
-.nav a::after {
+.nav-desktop a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -98,21 +99,21 @@ body {
     transition: width 0.25s ease;
 }
 
-.nav a:hover::after {
+.nav-desktop a:hover::after {
     width: 100%;
 }
 
-.nav ul {
+.nav-desktop ul {
     display: flex;
     gap: 100px;
     font-size: 20px;
 }
 
-.nav li {
+.nav-desktop li {
     list-style-type: none;
 }
 
-.language-toggle a {
+.toggle, .toggle-mobile {
     background-color: var(--dark-grey);
     padding: 20px 30px;
     border-radius: 30px;
@@ -122,8 +123,12 @@ body {
     transition: 0.3s ease;
 }
 
-.language-toggle a:hover {
+.toggle:hover {
     transform: scale(0.9);
+}
+
+.nav-mobile, .toggle-mobile {
+    display: none;
 }
 
 
@@ -132,14 +137,17 @@ body {
 .first-screen {
     background-image: url('../img/hero-background.webp');
     background-size: cover;      
-    background-position: center;    
     background-repeat: no-repeat; 
+    overflow-x: hidden;
 }
 
 .banner img {
     background-size: cover;      
     background-position: center;  
     background-repeat: no-repeat; 
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }
 
 .first-screen h1 {
@@ -167,6 +175,7 @@ body {
     font-size: 24px;
     font-weight: 600;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
     transition: 0.3s ease;
@@ -190,58 +199,60 @@ body {
 /* GIFTS & CONDITIONS */
 
 .gifts-cards, .conditions-cards {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
 .gifts h2, .conditions h2 {
-    font-size: 96px;
+    font-size: 48px;
     font-weight: 700;
     margin: 170px 0 51px 0;
 }
 
 .gifts-cards__item, .conditions-cards__item {
     position: relative; /* обязательно */
+    width: 100%;
     border-radius: 30px;
     background-color: var(--black);
     padding: 30px;
-    min-width: 760px;
-    max-height: 417px;
     border: 1px solid var(--red);
     overflow: visible; /* чтобы подарок мог вылезать за рамку */
 }
 
 .decor-gifts {
     position: absolute;
-    bottom: 20px;   /* регулируешь под макет */
+    bottom: 20px;
     right: 20px;
-    width: 250px;
-    pointer-events: none; /* чтобы не мешал кликам */
+    width: 30%;
+    max-width: 200px;
 }
 
 .decor-gifts_2 {
     position: absolute;
-    bottom: 20px;   /* регулируешь под макет */
-    right: 320px;
-    width: 120px;
-    pointer-events: none; /* чтобы не мешал кликам */
+    bottom: 0;
+    right: 10%;
+    width: 25%;
+    max-width: 160px;
 }
 
 .christmas-lama {
     position: absolute;
-    bottom: 300px;   /* регулируешь под макет */
-    right: 300px;
-    width: 118px;
-    pointer-events: none; /* чтобы не мешал кликам */
+    bottom: 100%;
+    right: 5%;
+    width: 18%;
+    max-width: 130px;
 }
 
 .ded-moroz {
     position: absolute;
-    bottom: 390px;   /* регулируешь под макет */
-    right: -1020px;
-    width: 118px;
-    pointer-events: none; /* чтобы не мешал кликам */
+    right: 0;
+    top: -40%;  /* регулируешь как в макете */
+    width: 200px;
+    pointer-events: none;
+    z-index: 100;
 }
+
 
 .gifts-cards__item p, .conditions-cards__item p {
     font-size: 24px;
@@ -251,6 +262,7 @@ body {
 }
 
 .conditions {
+    position: relative;
     margin-bottom: 150px;
 }
 
@@ -270,22 +282,16 @@ body {
     max-width: 500px;
 }
 
-.chance {
+.chance, .conditions-gift {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    background-color: var(--light-gray);
     font-size: 40px;
     font-weight: 700;
-    border-radius: 100px;
-    background-color: var(--light-gray);
-    padding: 15px 30px;
-    width: 80px;
-    height: 80px;
-}
-
-.conditions-gift {
-    border-radius: 100px;
-    background-color: var(--light-gray);
-    padding: 15px 30px;
-    width: 80px;
-    height: 80px;
     padding: 20px;
 }
 
@@ -304,7 +310,7 @@ body {
 
 
 .faq h2 {
-    font-size: 96px;
+    font-size: 48px;
     font-weight: 700;
     margin: 170px 0 51px 0;
 }
@@ -384,6 +390,11 @@ button, .faq-question {
 
 footer {
     position: relative;
+    background-image: url('../img/footer-background.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 40%; /* или сколько нужно */
 }
 
 .contacts h2 {

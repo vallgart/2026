@@ -6,6 +6,7 @@
     <title>Mazza Yangi Yil — Mobiuz</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/media.css">
     <link rel="icon" href="./img/favicon.ico" type="image/x-icon"> 
 </head>
 <body>
@@ -16,22 +17,34 @@
             <header class="header">
                 <div class="header-row">
                     <div class="logo"><a href="#!"><img src="./img/icons/mobiuz-logo.svg" alt="Логотип Mobiuz"></a></div>
-                    <nav class="nav">
-                        <ul>
-                            <li><a href="">Условия и приз</a></li>
-                            <li><a href="">Вопросы и ответы</a></li>
-                            <li><a href="">Контакты</a></li>
-                            <li><a href="">Правила</a></li>
-                        </ul>
-                    </nav>
-                    <div class="language-toggle">
-                        <a href="#!">
-                            UZ
-                            <svg class="icon" aria-hidden="true" width="20" height="20"><use href="#icon-arrow" /></svg>
-                        </a>
-                    </div>
+                        <nav class="nav-desktop">
+                            <ul>
+                                <li><a href="">Условия и приз</a></li>
+                                <li><a href="">Вопросы и ответы</a></li>
+                                <li><a href="">Контакты</a></li>
+                                <li><a href="">Правила</a></li>
+                            </ul>
+                        </nav>
+                        <div class="toggles_row">
+                            <div class="toggle">
+                                <a href="#!">UZ</a>
+                            </div>
+                            <button class="toggle-mobile">
+                                <svg class="icon" aria-hidden="true" width="20" height="20"><use href="#icon-burger" /></svg>
+                            </button>
+                        </div>
                 </div>
-                </header>
+                        <div class="mobile-menu">
+                            <nav class="nav-mobile">
+                                <ul>
+                                    <li><a href="">Условия и приз</a></li>
+                                    <li><a href="">Вопросы и ответы</a></li>
+                                    <li><a href="">Контакты</a></li>
+                                    <li><a href="">Правила</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+            </header>
             <div class="container">
 
                 <div class="hero-content">
@@ -76,7 +89,7 @@
                     <div class="gifts-cards__item">
                         <img class="christmas-lama" src="./img/christmas-lama.webp" alt="">
                         <div class="gifts-card-item__top">
-                            <h3>Шанс<br> в розыгрыше</h3>
+                            <h3>Шанс в розыгрыше</h3>
                             <span class="chance">2</span>
                         </div>
                             <p>Победитель розыгрыша получает приз: ужин с певцом Шохруххоном в модном ресторане Ташкента</p>
@@ -88,11 +101,11 @@
         </section>
 
         <section class="conditions">
+            <img class="ded-moroz" src="./img/ded-moroz.webp" alt="">
             <div class="container">
                 <h2>Как получить подарки:</h2>
                 <div class="conditions-cards">
                     <div class="conditions-cards__item">
-                        <img class="ded-moroz" src="./img/ded-moroz.webp" alt="">
                         <div class="conditions-card-item__top">
                             <h3>Подключение тарифного плана «Mazza yangi yil»</h3>
                             <span class="conditions-gift"><svg class="icon" aria-hidden="true" width="40" height="40"><use href="#icon-gift" /></svg></span>
@@ -107,7 +120,7 @@
 
                     <div class="conditions-cards__item">
                         <div class="conditions-card-item__top">
-                            <h3>Пополнение<br> баланса</h3>
+                            <h3>Пополнение баланса</h3>
                             <span class="conditions-gift"><svg class="icon" aria-hidden="true" width="40" height="40"><use href="#icon-gift" /></svg></span>
                         </div>
                             <p>Любого номера MOBIUZ в нашем мобильном приложении от 30 000 сум</p>
@@ -119,7 +132,7 @@
         </section>
 
         <section class="banner">
-            <a href="https://s.mobi.uz/asjv"><img src="./img/banner-mobile-app.webp" alt=""></a>
+            <a href="https://s.mobi.uz/asjv"><img src="./img/banner-mobile-app.png" alt=""></a>
         </section>
 
         <section class="faq">
@@ -210,7 +223,6 @@
                     <span class="copyright">© 2025 OOO «UMS» Все права защищены</span>
                 </div>
             </div>
-            <img class="footer-bg-img" src="./img/footer-background.webp" alt="">
         </footer>
 
 
@@ -285,6 +297,12 @@
     <symbol id="icon-location" viewBox="0 0 40 40">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C20 40 37.5 31.25 37.5 17.5C37.5 12.8587 35.6563 8.40752 32.3744 5.12563C29.0925 1.84374 24.6413 0 20 0C15.3587 0 10.9075 1.84374 7.62563 5.12563C4.34374 8.40752 2.5 12.8587 2.5 17.5C2.5 31.25 20 40 20 40ZM20 22.5C21.3261 22.5 22.5979 21.9732 23.5355 21.0355C24.4732 20.0979 25 18.8261 25 17.5C25 16.1739 24.4732 14.9021 23.5355 13.9645C22.5979 13.0268 21.3261 12.5 20 12.5C18.6739 12.5 17.4021 13.0268 16.4645 13.9645C15.5268 14.9021 15 16.1739 15 17.5C15 18.8261 15.5268 20.0979 16.4645 21.0355C17.4021 21.9732 18.6739 22.5 20 22.5Z" fill="white"/>
+        </svg>
+    </symbol>
+    <!-- Иконка бургер меню -->
+    <symbol id="icon-burger" viewBox="0 0 20 20">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.33398 4.99935C3.33398 4.77834 3.42178 4.56637 3.57806 4.41009C3.73434 4.25381 3.9463 4.16602 4.16732 4.16602H15.834C16.055 4.16602 16.267 4.25381 16.4232 4.41009C16.5795 4.56637 16.6673 4.77834 16.6673 4.99935C16.6673 5.22036 16.5795 5.43232 16.4232 5.5886C16.267 5.74488 16.055 5.83268 15.834 5.83268H4.16732C3.9463 5.83268 3.73434 5.74488 3.57806 5.5886C3.42178 5.43232 3.33398 5.22036 3.33398 4.99935ZM3.33398 9.99935C3.33398 9.77834 3.42178 9.56637 3.57806 9.41009C3.73434 9.25381 3.9463 9.16602 4.16732 9.16602H15.834C16.055 9.16602 16.267 9.25381 16.4232 9.41009C16.5795 9.56637 16.6673 9.77834 16.6673 9.99935C16.6673 10.2204 16.5795 10.4323 16.4232 10.5886C16.267 10.7449 16.055 10.8327 15.834 10.8327H4.16732C3.9463 10.8327 3.73434 10.7449 3.57806 10.5886C3.42178 10.4323 3.33398 10.2204 3.33398 9.99935ZM4.16732 14.166C3.9463 14.166 3.73434 14.2538 3.57806 14.4101C3.42178 14.5664 3.33398 14.7783 3.33398 14.9993C3.33398 15.2204 3.42178 15.4323 3.57806 15.5886C3.73434 15.7449 3.9463 15.8327 4.16732 15.8327H15.834C16.055 15.8327 16.267 15.7449 16.4232 15.5886C16.5795 15.4323 16.6673 15.2204 16.6673 14.9993C16.6673 14.7783 16.5795 14.5664 16.4232 14.4101C16.267 14.2538 16.055 14.166 15.834 14.166H4.16732Z" fill="white"/>
         </svg>
     </symbol>
 </svg>
