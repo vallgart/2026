@@ -1,6 +1,7 @@
 :root {
     --white: #fff;
     --red: #C90003;
+    --dark-red: #a10006;
     --dark-grey: #242424;
     --black: #1B1B1B;
     --light-gray: #3D3838;
@@ -141,14 +142,6 @@ body {
     overflow-x: hidden;
 }
 
-.banner img {
-    background-size: cover;      
-    background-position: center;  
-    background-repeat: no-repeat; 
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
 
 .first-screen h1 {
     font-size: 96px;
@@ -298,12 +291,62 @@ body {
 .gifts-card-item__top, .conditions-card-item__top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .gifts-cards__item .social-media {
     margin-top: 20px;
     display: flex;
     gap: 15px;
+}
+
+/* BANNER */
+
+.banner {
+    background-color: var(--dark-red);
+    display: flex;
+    padding-top: 20px;
+}
+
+.banner_left h3 {
+    font-size: 36px;
+    font-weight: 700;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.banner_left-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.banner-stores {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.banner_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner-stores {
+    max-width: 250px;
+}
+
+.banner_left img {
+    max-width: 255px;
+}
+
+.banner-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
 }
 
 /* FAQ */

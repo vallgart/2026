@@ -4,6 +4,10 @@
         margin: 0 auto;
     }
 
+    .first-screen {
+        background-position: 60%;
+    }
+
     .gifts-card-item__top h3, .conditions-card-item__top h3 {
         font-size: 24px;
     }
@@ -15,6 +19,7 @@
 
     .gifts-cards__item p, .conditions-cards__item p, .conditions-cards__item li {
         font-size: 18px;
+        margin-top: 15px;
     }
 }
 
@@ -27,7 +32,7 @@
         margin: 0 auto;
     }
 
-    .nav ul {
+    .nav-desktop ul {
         font-size: 18px;
         gap: 20px;
     }
@@ -56,12 +61,13 @@
     }
 
     .gifts-cards__item p, .conditions-cards__item p {
+        margin-top: 0;
         max-width: 650px;
     }
 
     .christmas-lama {
         position: absolute;
-        bottom: 235%;
+        bottom: 245%;
         right: 5%;
         width: 18%;
         max-width: 130px;
@@ -73,7 +79,11 @@
     }
 
     .decor-gifts, .decor-gifts_2  {
-        width: 100px;
+        display: none;
+    }
+
+    .banner-row {
+        flex-direction: column;
     }
 
     footer {
@@ -102,6 +112,10 @@
         display: block;
     }
 
+    .first-screen {
+        background-position: 70%;
+    }
+
     .first-screen h1 {
         font-size: 48px;
         max-width: 500px;
@@ -115,24 +129,31 @@
         font-size: 18px;
     }
 
-
-    .chance, .conditions-gift {
-        font-size: 20px;
-        width: 60px;
-        height: 60px;
-    }
-
-    .gifts-cards__item p, .conditions-cards__item p {
-        max-width: 450px;
-    }
-
     .christmas-lama {
         bottom: 245%;
     }
 
     .gifts-card-item__top, .conditions-card-item__top {
         flex-direction: column-reverse;
+        align-items: baseline;
+        margin-bottom: 15px;
         gap: 20px;
+    }
+
+    .qr-app {
+        display: none;
+    }
+
+    .banner_left h3 {
+        text-align: center;
+    }
+
+    .banner-stores img {
+        max-width: 200px;
+    }
+
+    .banner_right img {
+        max-width: 380px;
     }
 
 
@@ -192,7 +213,54 @@
         bottom: 150px;
     }
 
+    .chance, .conditions-gift {
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
     footer {
         padding-bottom: 200%;
+    }
+}
+
+@media (max-width: 378px) {
+
+
+    .banner_left h3 {
+        font-size: 24px;
+    }
+
+    .banner-stores img {
+        max-width: 200px;
+    }
+
+    .banner_right img {
+        max-width:340px;
+    }
+}
+
+@media (max-width: 320px) {
+    /* h2 {
+        font-size: 18px !important;
+    } */
+    p {
+        font-size: 16px !important;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    .banner_right img {
+        max-width:300px;
+    }
+
+    .social-media svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer {
+        padding-bottom: 250%;
     }
 }
