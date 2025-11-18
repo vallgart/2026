@@ -183,6 +183,13 @@
         width: 70%;
     }
 
+    .first-screen {
+        background-image: url('../img/mobile-bg-400.png');
+        background-size: cover;      
+        background-repeat: no-repeat; 
+        overflow-x: hidden;
+    }
+
     .gifts h2, .conditions h2 {
         font-size: 48px;
         font-weight: 700;
@@ -198,15 +205,28 @@
     }
 
     .hero-buttons {
-        flex-direction: column;
         padding: 32px 0;
         gap: 15px;
     }
 
     .first-screen h1 {
-        font-size: 36px;
-        max-width: 250px;
-        margin-top: 350px;
+        font-size: 28px;
+        max-width: 280px;
+    }
+
+    .first-screen p {
+        font-size: 15px;
+        max-width: 280px;
+        margin-top: 24px !important;
+    }
+
+    .btn-gifts, .btn-more {
+        font-size: 16px;
+    }
+
+    .btn-gifts svg, .btn-more svg {
+        width: 20px;
+        height: 20px;
     }
 
     .gifts h2, .conditions h2, .faq h2, .contacts h2, .banner h2 {
@@ -219,7 +239,7 @@
     }
 
     .btn-gifts, .btn-more {
-        padding: 6px 12px;
+        padding: 12px 24px;
     }
 
     .decor-gifts_2 {
@@ -228,6 +248,48 @@
 
     .decor-gifts {
         bottom: 150px;
+    }
+
+    .banner {
+        background-image: url('../img/mobile-banner-bg.png');
+        background-size: cover;      
+        background-repeat: no-repeat;
+        overflow-x: hidden;
+        padding: 75px 0;
+    }
+
+    
+
+    .span-desktop {
+        display: none;
+    }
+
+    .mobile-span {
+        display: block;
+        font-size: 24px;
+        max-width: 300px;
+    }
+
+    .mobile-span span {
+        font-size: 24px;
+
+    }
+
+
+    .banner-row {
+        flex-direction: column;
+    }
+
+    .banner_top {
+        order: 2;
+    }
+
+    .banner_middle {
+        order: 1;
+    }
+
+    .banner_bottom {
+        order: 3;
     }
 
     .chance, .conditions-gift {
@@ -262,6 +324,15 @@
     /* h2 {
         font-size: 18px !important;
     } */
+
+    .first-screen h1 {
+        font-size: 20px;
+        max-width: 200px;
+    }
+
+    .first-screen p {
+        max-width: 275px;
+    }
     p {
         font-size: 16px !important;
     }
