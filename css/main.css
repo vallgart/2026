@@ -8,6 +8,10 @@
     --faq-color: #2E2E2E;
 }
 
+.decor-gifts, decor-gifts_2 {
+    display: none;
+}
+
 @font-face {
     font-family: "TT Norms Pro";
     src: url("../fonts/TTNormsPro-Medium.woff2") format("woff2");
@@ -539,3 +543,4 @@ footer {
     pointer-events: none; 
 
 }
+
