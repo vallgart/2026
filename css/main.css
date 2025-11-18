@@ -8,7 +8,7 @@
     --faq-color: #2E2E2E;
 }
 
-.decor-gifts, decor-gifts_2 {
+.decor-gifts, .decor-gifts_2 {
     display: none;
 }
 
@@ -543,4 +543,5 @@ footer {
     pointer-events: none; 
 
 }
+
 
