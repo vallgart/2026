@@ -86,6 +86,22 @@
         flex-direction: column;
     }
 
+    .banner_top img {
+        width: 250px;
+    }
+
+    .qr-app {
+        width: 150px;
+    }
+
+    .banner-stores img {
+        width: 150px;
+    }
+
+    .banner_middle span {
+        font-size: 22px;
+    }
+
     footer {
         padding-bottom: 70%;
     }
@@ -351,4 +367,5 @@
     footer {
         padding-bottom: 250%;
     }
+
 }
