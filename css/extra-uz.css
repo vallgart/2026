@@ -1,3 +1,7 @@
+.decor-gifts, .decor-gifts_2 {
+    display: none;
+}
+
 :root {
     --white: #fff;
     --red: #C90003;
@@ -69,8 +73,11 @@ body {
     background: rgba(60, 37, 0, 0.5); /* твой цвет 3C2500 с прозрачностью 50% */
     backdrop-filter: blur(12px);      /* размывает фон за блоком */
     -webkit-backdrop-filter: blur(12px); /* нужно для Safari */
-    position: relative;
-    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .header-row {
@@ -247,7 +254,7 @@ body {
     position: absolute;
     right: 0;
     top: -40%;  /* регулируешь как в макете */
-    width: 200px;
+    width: 150px;
     pointer-events: none;
     z-index: 100;
 }
@@ -305,60 +312,10 @@ body {
     display: flex;
     gap: 15px;
 }
-
-/* BANNER
-
-.banner {
-    background-image: url('../img/banner-mobile-app.png');
-    display: flex;
-    padding-top: 20px;
-}
-
-.banner_left h3 {
-    font-size: 36px;
-    font-weight: 700;
-    max-width: 100%;
-    margin-bottom: 20px;
-}
-
-.banner_left-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-}
-
-.banner-stores {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.banner_left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.banner-stores {
-    max-width: 250px;
-}
-
-.banner_left img {
-    max-width: 255px;
-}
-
-.banner-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-} */
-
 /* BANNER NEW */
 
 .banner {
-    background-image: url('../img/banner-mobile-app.png');
+    background-image: url('../img/banner-mobile-app.webp');
     background-size: cover;      
     background-repeat: no-repeat; 
     overflow-x: hidden;
@@ -560,6 +517,7 @@ footer {
     .gifts-cards__item p, .conditions-cards__item p, .conditions-cards__item li {
         font-size: 18px;
         margin-top: 10px;
+        max-width: 400px;
     }
 }
 
@@ -622,8 +580,20 @@ footer {
         display: none;
     }
 
-    .banner-row {
-        flex-direction: column;
+    .banner_top img {
+        width: 250px;
+    }
+
+    .qr-app {
+        width: 150px;
+    }
+
+    .banner-stores img {
+        width: 150px;
+    }
+
+    .banner_middle span {
+        font-size: 22px;
     }
 
     footer {
@@ -723,8 +693,12 @@ footer {
         width: 70%;
     }
 
+    .ded-moroz {
+        width: 50px;
+    }
+
     .first-screen {
-        background-image: url('../img/mobile-bg-400.png');
+        background-image: url('../img/mobile-bg-400.webp');
         background-size: cover;      
         background-repeat: no-repeat; 
         overflow-x: hidden;
@@ -791,7 +765,7 @@ footer {
     }
 
     .banner {
-        background-image: url('../img/mobile-banner-bg.png');
+        background-image: url('../img/mobile-banner-bg.webp');
         background-size: cover;      
         background-repeat: no-repeat;
         overflow-x: hidden;
@@ -897,5 +871,10 @@ footer {
         padding-bottom: 250%;
     }
 }
+
+
+
+
+
 
 

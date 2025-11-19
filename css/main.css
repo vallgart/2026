@@ -8,10 +8,6 @@
     --faq-color: #2E2E2E;
 }
 
-.decor-gifts, .decor-gifts_2 {
-    display: none;
-}
-
 @font-face {
     font-family: "TT Norms Pro";
     src: url("../fonts/TTNormsPro-Medium.woff2") format("woff2");
@@ -58,7 +54,7 @@
 
 body {
     color: var(--white);
-    font-family: 'TTNormsPro-Bold', sans-serif;
+    font-family: 'TT Norms Pro', sans-serif;
     background-color: var(--dark-grey);
 }
 
@@ -182,10 +178,7 @@ body {
     align-items: center;
     gap: 10px;
     transition: 0.3s ease;
-}
-
-.btn-more {
-
+    padding: 20px 40px;
 }
 
 .btn-gifts:hover, .btn-more:hover {
@@ -193,13 +186,11 @@ body {
 }
 
 .btn-gifts {
-    padding: 20px 40px;
     background-color: var(--red);
 }
 
 .btn-more {
     border: 2px solid var(--red);
-    padding: 20px 40px;
 }
 
 
@@ -225,22 +216,6 @@ body {
     padding: 30px;
     border: 1px solid var(--red);
     overflow: visible; /* чтобы подарок мог вылезать за рамку */
-}
-
-.decor-gifts {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 30%;
-    max-width: 200px;
-}
-
-.decor-gifts_2 {
-    position: absolute;
-    bottom: 0;
-    right: 10%;
-    width: 25%;
-    max-width: 160px;
 }
 
 .christmas-lama {
@@ -314,59 +289,10 @@ body {
     gap: 15px;
 }
 
-/* BANNER
-
-.banner {
-    background-image: url('../img/banner-mobile-app.png');
-    display: flex;
-    padding-top: 20px;
-}
-
-.banner_left h3 {
-    font-size: 36px;
-    font-weight: 700;
-    max-width: 100%;
-    margin-bottom: 20px;
-}
-
-.banner_left-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
-}
-
-.banner-stores {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.banner_left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.banner-stores {
-    max-width: 250px;
-}
-
-.banner_left img {
-    max-width: 255px;
-}
-
-.banner-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-} */
-
 /* BANNER NEW */
 
 .banner {
-    background-image: url('../img/banner-mobile-app.png');
+    background-image: url('../img/banner-mobile-app.webp');
     background-size: cover;      
     background-repeat: no-repeat; 
     overflow-x: hidden;
@@ -481,9 +407,7 @@ button, .faq-question {
 .faq-answer p {
   font-size: 16px;
 }
-.faq-answer a {
-  color: var(--red);
-}
+
 .faq-item.active-state .faq-answer {
   padding: 0 20px 20px 20px;
   max-height: max-content;
@@ -502,7 +426,7 @@ footer {
 }
 
 .contacts h2 {
-    font-size: 96px;
+    font-size: 48px;
     font-weight: 700;
     margin: 170px 0 50px 0;
 }
@@ -534,14 +458,175 @@ footer {
     font-weight: 700;
 }
 
-.footer-bg-img {
-    position: absolute;
-    top: -50px;
-    background-size: cover;      
-    background-position: center;    
-    background-repeat: no-repeat; 
-    pointer-events: none; 
 
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: calc(100vh); /* уменьшаем высоту, чтобы header остался видим */
+
+    background: rgba(36, 36, 36, 0.85);
+    /* background-color: var(--dark-grey); */
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    transform: translateY(-120%); /* прячем выше */
+    transition: transform 0.3s ease;
+
+    z-index: 999; /* ниже header */
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+}
+
+/* чтобы меню выглядело ровно */
+.nav-mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    list-style: none;
+}
+
+.nav-mobile a {
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* =========================================
+   POPUP OVERLAY (фон, блюр)
+========================================= */
+.popup-overlay {
+    position: fixed;
+    inset: 0;                    /* top: 0; left: 0; right: 0; bottom: 0 */
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    z-index: 5000;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 
+/* =========================================
+   ОСНОВНОЕ ОКНО POPUP
+========================================= */
+.popup {
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+
+    background-color: var(--black);
+    border: 1px solid #EC0004;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;            /* чтобы скролл был внутри */
+    z-index: 6000;
+}
+
+
+/* =========================================
+   ВНУТРЕННЯЯ ОБЛАСТЬ С КОНТЕНТОМ
+   (именно здесь появляется скролл)
+========================================= */
+.popup-inner {
+    padding: 40px 30px;
+    overflow-y: auto;
+    max-height: 95vh;  /* минус кнопка и верхние отступы */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.popup-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.popup-subtitle {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.popup-inner li + li {
+    margin-top: 10px;
+}
+
+/* Красивая полоса прокрутки */
+.popup-inner::-webkit-scrollbar {
+    width: 10px;
+}
+
+.popup-inner::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    border-radius: 10px;
+}
+
+.popup-inner::-webkit-scrollbar-thumb {
+    background: var(--red);
+    border-radius: 10px;
+}
+
+.popup-inner::-webkit-scrollbar-thumb:hover {
+    background: #ff3333;
+}
+
+/* Firefox */
+.popup-inner {
+    scrollbar-width: thin;
+    scrollbar-color: var(--red) #2a2a2a;
+}
+
+
+/* =========================================
+   КНОПКА "Понятно"
+========================================= */
+.popup-close {
+    border-radius: 60px;
+    font-size: 24px;
+    font-weight: 600;
+
+    padding: 20px 40px;
+    margin: 20px auto 30px; /* центрируем */
+
+    background-color: var(--red);
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s ease;
+}
+
+.popup-close:hover {
+    transform: scale(0.9);
+}
